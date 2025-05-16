@@ -1,6 +1,7 @@
 .gallery-page {
   padding-top: 5rem;
   min-height: 100vh;
+  background-color: var(--main-bg-color);
 }
 
 .gallery-container {
@@ -13,6 +14,7 @@
 
 .gallery-content {
   flex: 1;
+  min-width: 0;
 }
 
 .gallery-header {
@@ -23,11 +25,14 @@
   font-size: 2.5rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .gallery-header p {
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.7);
   font-style: italic;
+  font-size: 0.95rem;
 }
 
 .gallery-grid {
@@ -39,13 +44,30 @@
 .no-results {
   text-align: center;
   padding: 3rem;
-  background-color: var(--card-bg-color);
-  border-radius: 8px;
+  background-color: rgba(42, 42, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .no-results p {
   margin-bottom: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.no-results .btn {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.no-results .btn:hover {
+  background-color: #008a91;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 992px) {
