@@ -83,19 +83,17 @@ const GallerySidebar: React.FC<GallerySidebarProps> = ({
             </div>
           </div>
           
-          {isCategoryOpen && (
-            <div className="section-content">
-              {categories.map(category => (
-                <div 
-                  key={category}
-                  className={`category-item ${selectedCategories.includes(category) ? 'active' : ''}`}
-                  onClick={() => onCategoryToggle(category)}
-                >
-                  {category}
-                </div>
-              ))}
-            </div>
-          )}
+          <div className={`section-content ${isCategoryOpen ? 'open' : ''}`}>
+            {categories.map(category => (
+              <div 
+                key={category}
+                className={`category-item ${selectedCategories.includes(category) ? 'active' : ''}`}
+                onClick={() => onCategoryToggle(category)}
+              >
+                {category}
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="sidebar-section">
@@ -109,19 +107,17 @@ const GallerySidebar: React.FC<GallerySidebarProps> = ({
             </div>
           </div>
           
-          {isTagsOpen && (
-            <div className="section-content tags-container">
-              {tags.map(tag => (
-                <div 
-                  key={tag}
-                  className={`tag-item ${selectedTags.includes(tag) ? 'active' : ''}`}
-                  onClick={() => onTagToggle(tag)}
-                >
-                  {tag}
-                </div>
-              ))}
-            </div>
-          )}
+          <div className={`tags-container ${isTagsOpen ? 'open' : ''}`}>
+            {tags.map(tag => (
+              <div 
+                key={tag}
+                className={`tag-item ${selectedTags.includes(tag) ? 'active' : ''}`}
+                onClick={() => onTagToggle(tag)}
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mobile-close-btn" onClick={toggleMobileSidebar}>
